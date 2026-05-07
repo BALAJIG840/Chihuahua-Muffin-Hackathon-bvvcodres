@@ -1,0 +1,45 @@
+# Chihuahua vs Muffin - 3LC Kaggle Competition Configuration
+# ============================================================
+# The 3LC x Hack4Impact-UMD AI Hackathon: Data-Centric AI with 3LC
+
+# Competition Settings
+competition:
+  name: "3LC Chihuahua vs Muffin - Data-Centric AI Challenge"
+  task: "binary_classification"
+  description: "Can you tell them apart? Build an image classifier using data-centric AI with 3LC."
+
+# Dataset Configuration
+dataset:
+  name: "chihuahua-muffin"
+  num_classes: 2
+  class_names:
+    - "chihuahua"   # 0
+    - "muffin"      # 1
+
+# 3LC Project settings
+tlc:
+  project_name: "Chihuahua-Muffin"
+  dataset_name: "chihuahua-muffin"
+
+# Data-Centric Constraints
+constraints:
+  # Model architecture (FIXED - no changes allowed)
+  model: "resnet18"
+
+# Training Configuration (reference; train.py uses its own constants)
+training:
+  batch_size: 16
+  num_workers: 0
+  epochs: 10
+  learning_rate: 0.0001
+  image_size: 128
+
+# Scoring (Kaggle: accuracy on hidden test set)
+scoring:
+  metric: "accuracy"  # Classification accuracy (0-1)
+
+# File Paths (relative to competition root)
+paths:
+  train_dir: "data/train"
+  val_dir: "data/val"
+  test_dir: "data/test"
